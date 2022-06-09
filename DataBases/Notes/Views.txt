@@ -1,0 +1,53 @@
+---
+Views
+---
+
+As the name suggests, they are like defined patterns for a table that we have to frequently access.
+
+We use them when we have to frequently access a specific table form or only some specific columns of a table.
+
+--
+Example
+--
+
+Instead of Doing:
+
+    SELECT stars.name, movies.names FROM stars 
+    JOIN movies ON stars.movie_id = movies.id
+    ORDER BY stars.name;
+
+    SELECT stars.name, movies.names FROM stars 
+    JOIN movies ON stars.movie_id = movies.id
+    WHERE stars.name LIKE "%JOHN%";
+
+    SELECT stars.name, movies.names FROM stars 
+    JOIN movies ON stars.movie_id = movies.id
+    WHERE movies.name LIKE "%toy story%" COLLATE NOCASE;
+
+
+Simply Create a View for the 'stars.name and movies.name' and use that view! :D 
+
+    CREATE VIEW stars_movies AS
+    SELECT stars.name, movies.name FROM stars
+    JOIN movies ON stars.movie_id = movies.id;
+
+    SELECT * FROM stars_movies WHERE stars.name LIKE "%JOHN%";
+
+    SELECT * FROM stars_movies WHERE movies.name LIKE "%toy story%" COLLATE NOCASE;
+
+Imagine if there were 100 queries, each of 3 lines, then all of them would be reduced to 1-2 lines now!
+
+For Conflitcting Names 
+as above in stars.name and movies.name,
+It's better to specify them so 
+that they both can be distinguished in the final view.
+
+    CREATE VIEW stars_movies AS
+    SELECT stars.name AS star, movies.name AS movie FROM stars
+    JOIN movies ON stars.movie_id = movies.id;
+
+    SELECT * FROM stars_movies WHERE star LIKE "%JOHN%";
+
+    SELECT * FROM stars_movies WHERE movie LIKE "%toy story%" COLLATE NOCASE;
+
+Then the queries become even shorter ;p

@@ -1,0 +1,98 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+
+<!-- Events are used to associate our UI controls with our CODE and Logical work :D
+     Event handling is the process of listening to user input in the application and then executing the
+     respective 'Event Handler' specified for that particular input :D  -->
+
+<!-- The code for the events is written in the Controller.java file :)
+     As specified above in our main Scene tag, GridPane under 'fx:controller' :D -->
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="7"
+           text="Enter Name To Print Hello or Bye with Name! :D" textFill="#147b80" wrapText="true">
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+
+        <font>
+            <Font name="Impact bold" size="18"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"
+           text="Enter Name -" textFill="#ed0021" wrapText="true">
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+
+        <font>
+            <Font name="Impact bold" size="17"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="2" GridPane.columnSpan="6"
+               fx:id="nameField" />
+    <!-- The 'fx:id' attribute is used here to specify the variable name where data from this tag will be
+         associated and stored :D -->
+
+    <HBox spacing="100" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="4" alignment="CENTER">
+
+        <padding>
+            <Insets top="10" bottom="10" right="10" left="10"/>
+        </padding>
+
+        <CheckBox GridPane.rowIndex="6" GridPane.columnIndex="0"
+                  text="Check To Clear Field After ButtonPress. :)" fx:id="checkBox1"/>
+        <!-- A CheckBox to indicate whether to clear the above TextField 'nameField' after button
+             press of helloButton :D -->
+
+        <HBox>
+            <Button fx:id="helloButton" text="Say Hello! :D" onAction="#onButtonClick"/>
+
+            <!-- We Use The 'fx:id' to assign a variable in our Controller class to the specific Control we added the tag to! :D
+                 The 'onAction' tag is used here to specify the function name that will be called when the button is
+                 pressed, here, the function name 'printHello' :D
+                 NOTE - '#' is used to specify that the function is defined in the Controller file :) -->
+
+            <!-- Just another button like the above 'helloButton', but this one prints bye :D    -->
+
+            <Button fx:id="byeButton" text="Say Bye! :)" onAction="#onButtonClick"/>
+        </HBox>
+    </HBox>
+
+
+    <!-- This is the TextField For Showing Output :D -->
+    <TextField GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="7"
+               GridPane.valignment="BOTTOM" fx:id="outputField" editable="False"
+               text="This is the Output Field :)" alignment="CENTER"/>
+
+
+
+</GridPane>

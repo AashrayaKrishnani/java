@@ -1,0 +1,16 @@
+***  Interrupting a thread.
+Simply do it using the interrupt() method.
+
+This will force the thread to throw a InterruptedException
+Or do what's in the catch block if the exception is catched.
+
+** Joining a thread. (Linking)
+Do so using the join() method.
+It will essentially make the current thread wait till the joined thread has finished executing :)
+
+Execute the following line in the thread that you wish to join from.
+    Thread_to_Join_TO_.join();
+
+or if you want to join for a specified time, so that the original thread continues it's work if the
+joined thread doesn't terminate in the given time.
+    Thread_to_Join_TO_.join( TIME_IN_MILLIS );

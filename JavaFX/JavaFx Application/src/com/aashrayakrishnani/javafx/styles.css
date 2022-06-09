@@ -1,0 +1,17 @@
+
+.button {
+
+    -fx-background-color: green;
+    -fx-text-fill: aquamarine;
+
+}
+
+#buttonOne, #buttonFive, #buttonThree {
+
+    -fx-background-color: gold;
+    -fx-text-fill: white;
+
+}
+
+
+

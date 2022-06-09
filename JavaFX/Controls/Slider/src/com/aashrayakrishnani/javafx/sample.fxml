@@ -1,0 +1,18 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Slider?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!-- Barely Using a Slider will work, but it won't show any values,
+         So we use 'showTickLabels' and 'showTickMarks' to show it :D
+         We use 'minorTickCount' to specify number of ticks between major ticks like 0-25-50-75-100, etc.-->
+
+    <!-- The Slider can also be set up vertically by using the orientation attribute and setting it to vertical ;D
+         Like -> 'orientation="VERTICAL" inside Slider tag :) -->
+
+
+    <Slider GridPane.rowIndex="0" GridPane.columnIndex="0" min="0" max="100"
+            showTickLabels="true" showTickMarks="true" minorTickCount="4" snapToTicks="true"/>
+
+</GridPane>

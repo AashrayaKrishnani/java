@@ -1,0 +1,27 @@
+Synchronisation helps us prevent Race Conditions
+Where multiple threads working on a single object may cause unstable interference! :)
+
+
+We can synchronise methods in the following ways: -
+
+1. Using the 'synchronized' keyword in the method declaration like:
+
+    public void synchronized some_function(){};
+
+This will indicate the JVM to make sure that only one thread operates this function at a given time.
+And other threads wanting to operate on it shall only do so once the present thread has finished.
+
+2. Using 'synchronized' blocks on objects. (Primitive variables not supported :o)
+
+**Note: Make sure the object/variable synchronized is a global-sort-of variable that is not local!!
+        Else the threads will have their own copy and stuff will be messed up.
+
+This works by putting a lock on the specified variable,
+that makes sure only one thread operates on that at a given time.
+
+Syntax:
+
+    synchronized(object_variable_name)
+    {
+        Code_To_be_Synchronized;
+    }

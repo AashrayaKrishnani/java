@@ -1,0 +1,40 @@
+---
+Streams
+---
+
+They do not mean I/O streams here XD
+Rather, the refer to **Sequential execution of Operations**.
+
+
+** Stream Operations are Lazily Operated!
+Meaning that NO INTERMEDIATE Operations are EXECUTED TILL A TERMINAL OPERATION is Specified!
+
+Eg:
+    list.stream().filter(e -> {
+        System.out.println(e); 
+        return e1.shouldReturn();}
+        );
+
+    Will NOT PRINT anything, because .filter() is an Intermediate method, so it won't be evaluated for we haven't specified a terminal operation.
+
+Solution
+
+    list.stream().filter(e -> {
+        System.out.println(e); 
+        return e1.shouldReturn();}
+        ).close();                          // ;D
+---
+Method Referencing
+---
+
+So this is a special syntax that we can use while Using Lambdas.
+
+Here is an example:
+
+    list.forEach(System.out::println);
+
+Is Same As
+
+    list.forEach(s -> System.out.println(s));
+
+Note that the *Function* we use **Must** take in a *Single* argument that the **Compiler** can infer correctly.

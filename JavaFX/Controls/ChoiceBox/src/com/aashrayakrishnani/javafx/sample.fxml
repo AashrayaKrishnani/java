@@ -1,0 +1,31 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ChoiceBox?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!--  This is like A Drop-Down List To Choose From :D
+          A healthy alternative to RadioButtons for plentiful of options! ;p
+
+          This is similar to ComboBox, however the only Major difference between this and ComboBox is that
+          here we can see a 'tick' appear in the drop down list after we have selected a particular option :D
+
+           The Default value thing and 'editable' thing doesn't work in ChoiceBox too XD -->
+
+    <ChoiceBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+        <items>
+            <FXCollections fx:factory="observableArrayList"> <!-- This creates an ArrayList of all Options (Strings) -->
+                <String fx:value="This is Option 1"/>
+                <String fx:value="Option 2 is this One"/>
+                <String fx:value="Option 3 is also written in a weird way XD"/>
+                <String fx:value="Yes I could not have written Option 4 simpler"/>
+                <String fx:value="Option 5, yeah I let you enjoy here ;p"/>
+            </FXCollections>
+        </items>
+
+    </ChoiceBox>
+
+</GridPane>

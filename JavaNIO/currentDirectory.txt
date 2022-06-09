@@ -1,0 +1,3 @@
+We are in the currentDirectory: /code/JAVA/JavaNIO/currentDirectory.txt
+
+:D

@@ -1,0 +1,6 @@
+---
+Starvation
+---
+
+Refers to when the thread is not necessarily deadlocked andeternally suspended but rather it has fairly low probability of being run.
+Meanng it stays suspended for a long time waiting to get the lock.

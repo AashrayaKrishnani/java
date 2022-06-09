@@ -1,0 +1,13 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Spinner?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!-- This is a recently added (Java-8u+) feature in JavaFX which is an alternative to the Slider tag ;)  -->
+    <!-- The 'editable' attribute allows user to manually add a precise valid value in the TextField in Spinner-->
+
+    <Spinner GridPane.columnIndex="0" GridPane.rowIndex="0"
+             min="0" max="100" editable="true" initialValue="50"/>
+
+</GridPane>

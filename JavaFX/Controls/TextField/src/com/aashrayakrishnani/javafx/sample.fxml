@@ -1,0 +1,12 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!--  This is Used To Input Text! :D
+          This allows Copy-Paste from Clipboard! ;p -->
+
+    <TextField GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+</GridPane>

@@ -1,0 +1,85 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!-- Events are used to associate our UI controls with our CODE and Logical work :D
+     Event handling is the process of listening to user input in the application and then executing the
+     respective 'Event Handler' specified for that particular input :D  -->
+
+<!-- The code for the events is written in the Controller.java file :)
+     As specified above in our main Scene tag, GridPane under 'fx:controller' :D -->
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0"
+           text="Enter Name To Print Hello with Name! :D" textFill="#147b80" wrapText="true">
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+
+        <font>
+            <Font name="Impact bold" size="15"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="0"
+               fx:id="nameField" onKeyReleased="#handleKeyReleased"/>
+    <!-- The 'fx:id' attribute is used here to specify the variable name where data from this tag will be
+         associated and stored :D
+         The 'onKeyReleased' defines the function that will be called once a key is RELEASED in the TextField :D
+         We use 'onKeyReleased' here instead of 'onKeyPressed' because our EventHandler 'handleKeyReleased'
+         processes to check text in TextField, which will appear after the KeyIsReleased and not when it's pressed :D -->
+
+    <HBox GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <Button fx:id="helloButton" text="Say Hello! :D" onAction="#onButtonClick"/>
+
+        <!-- We Use The 'fx:id' to assign a variable in our Controller class to the specific Control we added the tag to! :D
+             The 'onAction' tag is used here to specify the function name that will be called when the button is
+             pressed, here, the function name 'printHello' :D
+             NOTE - '#' is used to specify that the function is defined in the Controller file :) -->
+
+        <!-- Just another button like the above 'helloButton', but this one prints bye :D    -->
+
+        <Button fx:id="byeButton" text="Say Bye! :)" onAction="#onButtonClick"/>
+    </HBox>
+
+    <CheckBox GridPane.rowIndex="3" GridPane.columnIndex="0" selected="true"
+              text="Check To Clear Field After ButtonPress. :)" fx:id="checkBox1"/>
+    <!-- A CheckBox to indicate whether to clear the above TextField 'nameField' after button
+         press of helloButton :D -->
+
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="0"
+           text="Label To Tell Current State of our Thread in onButtonClick() :D" fx:id="ourLabel"
+           textFill="#000000" wrapText="true">
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+
+        <font>
+            <Font name="Impact bold" size="20"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+</GridPane>

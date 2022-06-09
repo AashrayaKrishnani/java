@@ -1,0 +1,30 @@
+--
+Lambda Expressions
+--
+    They are the same as they are in Python or Dart :)
+
+    Just the symbol used in java is:  '->' (Arrow Token)
+
+    Eg:
+
+        Instead of Writing:
+
+            Collections.sort(listOfPeople, new Comparable<Person>(){
+                public int compareTo(Person p1, Person p2)
+                {
+                    return p1.getName().compareTo( p2.getName() );
+                }
+            });
+        
+        Simply Write:
+
+            Collections.sort(listOfPeople, (p1, p2) -> p1.getName().compareTo( p2.getName() ));
+
+        BooM!
+
+--
+Functional Interfaces
+--
+
+Interfaces like *Comparable* or *Runnable* that Require the Implementation of **ONE** abstract method, here, *compareTo()* and *run()* respectively! :)
+ 

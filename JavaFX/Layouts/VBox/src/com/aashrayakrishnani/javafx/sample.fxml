@@ -1,0 +1,21 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Here, if we resize the window and make it smalle,
+    Then, buttons will actually disappear instead of resizing and fitting themselves as in 'FlowPane' layout-->
+
+<VBox fx:controller="com.aashrayakrishnani.javafx.Controller"
+      xmlns:fx="http://javafx.com/fxml">
+
+    <Button text="Button One"/>
+    <Button text="Button Two"/>
+    <Button text="Button Three"/>
+    <Button text="Button Four"/>
+    <Button text="Button Five"/>
+    <Button text="Button Six"/>
+    <Button text="Button Seven"/>
+    <Button text="Button Eight"/>
+    <Button text="Button Nine"/>
+    <Button text="Button Ten"/>
+
+</VBox>

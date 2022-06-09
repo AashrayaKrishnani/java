@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aashrayakrishnani.javafx.addContactDialogController">
+    <content>
+
+        <GridPane hgap="10" vgap="10">
+
+            <Label style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" text="First Name - " GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14" />
+                </font>
+
+
+            </Label>
+
+            <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="0" onMouseClicked="#clearFirstNameField" >
+
+                <tooltip>
+                    <Tooltip text="One Word - Only Alphabets" wrapText="true"/>
+                </tooltip>
+
+            </TextField>
+
+
+            <Label style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" text="Last Name - " GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14" />
+                </font>
+
+
+            </Label>
+
+            <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#clearLastNameField">
+
+                <tooltip>
+                    <Tooltip text="One Word - Only Alphabets"  wrapText="true"/>
+                </tooltip>
+
+            </TextField>
+
+            <Label style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" text="Phone Number - " GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14" />
+                </font>
+
+            </Label>
+
+            <TextField fx:id="phNum" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#clearPhNumField">
+
+                <tooltip>
+                    <Tooltip text="Only Digits Accepted - No Blank Spaces" wrapText="true"/>
+                </tooltip>
+
+            </TextField>
+
+            <Label style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" text="Notes - " GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14" />
+                </font>
+
+            </Label>
+
+            <TextArea fx:id="notes" GridPane.columnIndex="1" GridPane.rowIndex="3" onMouseClicked="#clearNotesField">
+
+                <tooltip>
+                    <Tooltip text="Type Whatever You Want lol ;D"  wrapText="true"/>
+                </tooltip>
+
+            </TextArea>
+
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+
+        </GridPane>
+
+
+
+    </content>
+
+</DialogPane>

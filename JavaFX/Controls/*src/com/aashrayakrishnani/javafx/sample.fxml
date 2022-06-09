@@ -1,0 +1,267 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ToggleButton?>
+
+
+<!-- This is just a brief overview of all the controls, for in-depth info, view their individual Modules :D -->
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+
+    <padding>
+
+        <Insets top="20" left="20" right="20" bottom="20"/>
+
+    </padding>
+
+
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="0" text="Click Me">
+
+        <graphic>
+            <ImageView>
+                <Image url="@TipOfTheDay24.gif" />
+            </ImageView>
+        </graphic>
+
+    </Button>
+
+
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="0"
+           text="This is a Label" textFill="#147b80" wrapText="true">
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+        <font>
+            <Font name="Arial italic" size="12"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="2"
+          style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10" GridPane.rowSpan="2">
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+        <CheckBox text="HoOman XD"/>
+
+    </VBox>
+
+
+    <ChoiceBox GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.columnSpan="2">
+
+        <items>
+            <FXCollections fx:factory="observableArrayList"> <!-- This creates an ArrayList of all Options (Strings) -->
+                <String fx:value="This is Option 1"/>
+                <String fx:value="Option 2 is this One"/>
+                <String fx:value="Option 3 is also written in a weird way XD"/>
+                <String fx:value="Yes I could not have written Option 4 simpler"/>
+                <String fx:value="Option 5, yeah I let you enjoy here ;p"/>
+            </FXCollections>
+        </items>
+
+    </ChoiceBox>
+
+
+    <ColorPicker GridPane.rowIndex="0" GridPane.columnIndex="5" />
+
+
+    <ComboBox GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2" >
+
+        <items>
+            <FXCollections fx:factory="observableArrayList"> <!-- This creates an ArrayList of all Options (Strings) -->
+                <String fx:value="This is Option 1"/>
+                <String fx:value="Option 2 is this One"/>
+                <String fx:value="Option 3 is also written in a weird way XD"/>
+                <String fx:value="Yes I could not have written Option 4 simpler"/>
+                <String fx:value="Option 5, yeah I let you enjoy here ;p"/>
+            </FXCollections>
+        </items>
+
+        <!-- Now we specify a default value to show at start of the application! :D  -->
+
+        <value>
+            <String fx:value="This is the Default Option"/>
+        </value>
+
+    </ComboBox>
+
+
+    <DatePicker GridPane.rowIndex="1" GridPane.columnIndex="5"
+                editable="true"/>
+
+
+    <PasswordField GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+
+
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.rowSpan="2"
+          style="-fx-border-color: black; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10">
+
+        <fx:define>
+            <ToggleGroup fx:id="colorToggleGroup"/>
+        </fx:define>
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <!-- The 'selected' property allows to have a default button selected at the start of the application :) -->
+        <RadioButton text="Red" textFill="red" toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton text="Blue" textFill="deepskyblue" toggleGroup="$colorToggleGroup"/>
+        <RadioButton text="Green" textFill="lawngreen" toggleGroup="$colorToggleGroup"/>
+
+    </VBox>
+
+
+    <HBox GridPane.rowIndex="2" GridPane.columnIndex="1"
+          style="-fx-border-color: red; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10">
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <ToggleButton text="Fan"/>
+        <ToggleButton text="AC"/>
+        <ToggleButton text="Cooler"/>
+        <ToggleButton text="TV"/>
+
+        <!-- Currently all ToggleButtons can be turned On all at a time, but to have just one ON at a time,
+             Put them in a ToggleGroup as done with RadioButtons :) -->
+
+    </HBox>
+
+
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="3"
+           text="ToggleButtons Above" textFill="#090080" wrapText="true" >
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+        <font>
+            <Font name="Impact" size="15"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <Slider GridPane.rowIndex="2" GridPane.columnIndex="2" min="0" max="100"
+            showTickLabels="true" showTickMarks="true" minorTickCount="4" snapToTicks="true"/>
+
+
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="3"
+           text="Slider Above" textFill="#800011" wrapText="true" >
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+        <font>
+            <Font name="Impact" size="15"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <Spinner GridPane.columnIndex="3" GridPane.rowIndex="2"
+             min="0" max="100" editable="true" initialValue="50"/>
+
+
+    <Label GridPane.columnIndex="3" GridPane.rowIndex="3"
+           text="Spinner Above" textFill="#00800c" wrapText="true" >
+        <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+              Try making the Label text longer to see it in effect ;D -->
+
+        <font>
+            <Font name="Impact" size="15"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url="@Information24.png" />
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+
+    <Accordion GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.columnSpan="2" GridPane.rowSpan="2"
+               expandedPane="$TP3">
+
+        <panes>
+
+            <TitledPane   text="TitledPane Number One!">
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+            <TitledPane   text="TitledPane Number Two!">
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+            <TitledPane fx:id="TP3" text="Default Titled Pane!">
+
+                <!-- 'fx:id' is used to assign an ID to this particular TitledPane so that it
+                                        can be recognized by the 'expandedPane' attribute above -->
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+        </panes>
+
+    </Accordion>
+
+
+</GridPane>

@@ -1,0 +1,22 @@
+Well in most cases, a machine is connected to the network via one medium (Wifi, Lan, etc.)
+
+But when we use multiple apps that might be using that connection to fetch data,
+how is it that the data coming through that connection knows which app/service needs it?
+
+--
+Ports
+--
+They are numeric codes that help wrap the received data and Route it to the respective service/app :)
+
+
+-----
+What are Sockets?
+-----
+
+While using low-level APIs in Java that help us establish TCP, or any other Connection.
+We use Sockets: Socket for Client Socket, ServerSocket for Server Socket :)
+
+In case of multiple clients connecting to the same server, they use the Same Port, but an individual socket each! :)
+
+Where Socket is an end-point of the two-way connection between the client and the server ;)
+Both, server and the client have their own sockets :)

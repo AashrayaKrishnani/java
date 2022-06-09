@@ -1,0 +1,37 @@
+---
+Atomic Statments
+---
+
+The statments that either are executed fully or aren't executed at all.
+Meaning a thread cannot be suspened in between executing an atomic statement.
+
+They include value assignment operations to primitive types except long and double.
+
+Eg: int a = 4;   // A thread will either fully execute it or would be suspened before execution.
+
+but, 
+a++;    // This translates to roughly ---> get value of a  __+__ add 1 to it __+__ set a equal to new value.
+        // A thread may be suspended between either of these operations and hence could result in thread interference!
+
+---
+java.util.concurrent.atomic
+---
+
+This package contains classes like the atomicLong, atomicDouble, etc. 
+that allow one to operate on these datatypes with atomic operations to avoid thread interference. :)
+
+---
+Volatile
+---
+
+The 'volatile' keyword makes it such that a variable's value is updated instantly in the **Main memory**
+as soon as a change is made to it's **cache** value.
+
+Since CPUs usually have a cache that they store value in, and threads have a copy of the variable in the CPU cache.
+It could be that a thread trying to increment the value of a variable might update the value of it's own CACHE.
+And at the same time, Another Thread, running on another CPU(core) might also try to do the same on it's cache.
+
+So to ensure that any changes made to the variable's value are reflected instantly in the Main Memory value so that other threads have the
+latest value for that variable, we use the 'volatile' keyword. :)
+
+Eg: public volatile int a = 4;

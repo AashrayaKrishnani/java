@@ -1,0 +1,30 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!--  It's like a PUSH button lol XD   -->
+    <ToggleButton text="ON / OFF" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="1"
+          style="-fx-border-color: red; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10">
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <ToggleButton text="Fan"/>
+        <ToggleButton text="AC"/>
+        <ToggleButton text="Cooler"/>
+        <ToggleButton text="TV"/>
+
+        <!-- Currently all ToggleButtons can be turned On all at a time, but to have just one ON at a time,
+             Put them in a ToggleGroup as done with RadioButtons :) -->
+
+    </HBox>
+
+</GridPane>

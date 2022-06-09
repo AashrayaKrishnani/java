@@ -1,0 +1,53 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Accordion?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!-- Titled Panes Can Be Maximized to see their content, and then minimized after one's work is done :D -->
+
+    <TitledPane   GridPane.rowIndex="0" GridPane.columnIndex="0"
+                  text="This is a Simple TitledPane! :D">
+
+        <Label text = "Random Label OP in the chat XD" />
+
+    </TitledPane>
+
+
+    <!-- We Can Also Use TitledPanes in a 'Accordion' where only One TitledPane can be Maximized at a time :D
+         The 'expandedPane' property allows us to set a default Pane maximized at the start of the application!-->
+
+
+    <Accordion GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="2"
+                expandedPane="$TP3">
+
+        <panes>
+
+            <TitledPane   text="TitledPane Number One!">
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+            <TitledPane   text="TitledPane Number Two!">
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+            <TitledPane  fx:id="TP3" text="Default Titled Pane!">
+
+            <!-- 'fx:id' is used to assign an ID to this particular TitledPane so that it
+                                    can be recognized by the 'expandedPane' attribute above -->
+
+                <Label text = "Random Label OP in the chat XD" />
+
+            </TitledPane>
+
+        </panes>
+
+    </Accordion>
+
+</GridPane>

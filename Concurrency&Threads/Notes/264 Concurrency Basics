@@ -1,0 +1,15 @@
+Process: A unit of execution that has its own working space in the memory :)
+
+Heap: The memory space allotted to a Java Application for use.
+(Grows downward! :D)
+
+Thread: A unit of execution within a process.
+        They use the resources allotted to their respective parent process :)
+
+Stack: Memory that threads have for their local variables and stuff :)
+(Grows upward)
+
+Concurrency: Application doing more than one thing at a time (generally, with the help of multiple threads).
+
+
+

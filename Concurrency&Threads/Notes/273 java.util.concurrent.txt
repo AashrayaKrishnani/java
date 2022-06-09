@@ -1,0 +1,9 @@
+Atomic Statements: They are statements that are sure to be executed. Like assignment operations for small types like: int a =5;
+
+If a statement is not atomic, and the object working on it is NOT Thread safe, then there is a high chance that the Thread might be 
+terminated or suspended while executing that statement IF THERE ARE MULTIPLE THREADS working on a COMMON object.
+
+The java.util.ArrayList is NOT Thread Safe.
+Meaning that it is vulnerable, and can easily mess up the program in cases of thread intereference! 
+
+Alternative: Use java.util.Vector instead, or Synchronize the code with the 'synchronized' keyword :D

@@ -1,0 +1,19 @@
+---
+UDP
+---
+
+UDP stands for User Datagram Protocol.
+
+* It is Used for FAST Data Transmission 
+because UNLIKE TCP it *Ditches* the "HANDSHAKING" process to Initiate Connections.
+
+Rather it simply sends Data as a Single Message!
+Tho this may lead to DataLoss at times, it's extremelyyyy quick!
+
+---
+Examples
+---
+
+Apps using VOIP like Skype use UDP as transferring Real-time data needs Speed!
+Plus the data is So Damn Dynamic that even if 1-2 packets drop, it's hardly noticeable :)
+( That's how lag works basically ;p )

@@ -1,0 +1,30 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!-- The 'indeterminate' property allows to have the CheckBox start at a neutral state with a 'dash' in it :) -->
+    <CheckBox text = "Subscribe to our NewsLetter"
+              GridPane.columnIndex="0" GridPane.rowIndex="0"
+              indeterminate="true"/>
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="1"
+          style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10">
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <CheckBox text="Dog"/>
+        <CheckBox text="Cat"/>
+        <CheckBox text="Bird"/>
+        <CheckBox text="HoOman XD"/>
+
+    </VBox>
+
+
+</GridPane>

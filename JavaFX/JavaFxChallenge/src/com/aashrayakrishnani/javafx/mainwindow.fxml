@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="435.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aashrayakrishnani.javafx.Controller">
+
+    <top>
+
+        <VBox>
+
+            <MenuBar>
+
+                <Menu text="Contacts">
+                    <items>
+                        <MenuItem text="Add New Contact" onAction="#showAddContactDialog"/>
+                        <SeparatorMenuItem />
+                        <MenuItem text="Edit Contact" />
+                        <SeparatorMenuItem />
+                        <MenuItem text="Delete Contact" />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#handleExit" text="Exit" />
+                    </items>
+                </Menu>
+
+                <padding>
+                    <Insets bottom="5" />
+                </padding>
+
+            </MenuBar>
+        </VBox>
+
+
+
+    </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="628.0" prefWidth="696.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="firstNameCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="40.0" prefWidth="190.0" sortable="false" text="First Name" />
+          <TableColumn fx:id="lastNameCol" editable="false" maxWidth="535.3333358764648" minWidth="-1.0" prefWidth="190.0" sortable="false" text="Last Name" />
+            <TableColumn fx:id="phNumCol" editable="false" minWidth="-1.0" prefWidth="210.0" sortable="false" text="Phone Number" />
+            <TableColumn fx:id="notesCol" editable="false" prefWidth="230.0" sortable="false" text="Notes" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+
+</BorderPane>

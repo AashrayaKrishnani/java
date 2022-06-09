@@ -1,0 +1,11 @@
+---
+.backup
+---
+
+Usage: .backup FileNameToSaveAs;
+
+---
+.dump
+---
+
+Shows all Commands that have been Run to make this DataBase into what it is.

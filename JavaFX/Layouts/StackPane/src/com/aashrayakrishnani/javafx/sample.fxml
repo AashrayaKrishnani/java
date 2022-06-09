@@ -1,0 +1,32 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+
+<!-- Here the 'StackPane' layout ACTUALLY STACKS the Controls (Buttons, Labels, etc.) in the order as they are
+     defined in the code!!-->
+<!-- The LAST Control defined within 'StackPane' shows on top, while ones defined before that will overlap in
+     the order as the FIRST one defined in the code is placed behind all other controls!
+      Similar to stacking one on top of another! :D -->
+
+<StackPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+           xmlns:fx="http://javafx.com/fxml">
+
+<!-- The ORDER MATTERS heavily here! -->
+<!-- Try defining the below defined controls in different orders to see the change :) -->
+
+    <Button text="Button One"
+            style="-fx-background-color: red"/>
+    <Label text="A Random Label"
+           style="-fx-background-color: aquamarine"/>
+    <Label text=":)"
+           style="-fx-background-color: black;"
+           textFill="white">
+        <font>
+            <Font name="Impact"></Font>
+        </font>
+    </Label>
+
+
+
+</StackPane>

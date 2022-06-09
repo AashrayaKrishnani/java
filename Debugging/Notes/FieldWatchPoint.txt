@@ -1,0 +1,9 @@
+One really cool feature is that, we can Set *Field WatchPoints* just like *BreakPoints*.
+
+-- 
+Field WatchPoints
+--
+They are set on a *particular Variable*,
+
+and they *Suspend* the code *Whenever the value of that *field variable* is **Changed***
+~ to how a BreakPoint breaks when we reach a line :D

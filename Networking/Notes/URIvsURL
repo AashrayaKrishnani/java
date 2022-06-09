@@ -1,0 +1,33 @@
+---
+Key Difference
+---
+
+The difference is fairly thin tho it is there.
+
+URL is an Absolute Locator for a Resource,
+hence it contains COMPLETE INFORMATION to access the Resource.
+
+URI is an Identifier for a Resource,
+hence it May or May Not Contain Complete Information to access the Resource,
+it may only contain some information that can be used in a certain situation to identify the resource.
+
+--
+Example
+--
+A Url is an ABSOLUTE Path to a file, such that it can be accessed irrespective of the current directory.
+
+A URI MAY be a relative Path to a file.
+
+A URL has complete information, including the scheme for the resource (http OR db OR whatever we see before '://' in the path)
+A URI May or May Not contain a Scheme depending upon the context ;p
+
+
+---
+Verdict
+---
+URIs are useful to reference to the resources in the code as it makes things Simpler,
+tho while accessing the resource, we HAVE TO USE URLs because that's the way it is.
+
+So we can have a root URI that has our root address, while rest of the URIs are Relative,
+and whenever we need to access a certain resource, we can resolve it's relative URI using the root URI to convert to a URL ;D
+

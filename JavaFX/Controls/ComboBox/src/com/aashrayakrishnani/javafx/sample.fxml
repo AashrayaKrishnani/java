@@ -1,0 +1,37 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!--  This is like A Drop-Down List To Choose From :D
+          A healthy alternative to RadioButtons for plentiful of options! ;p -->
+
+    <!-- Note That ComboBox has an attribute 'editable' that can be set as true to have the user be given the
+         ability to edit the options :)
+         Add 'editable="true"' in ComboBox tag below to see it in action :D -->
+
+
+    <ComboBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+        <items>
+            <FXCollections fx:factory="observableArrayList"> <!-- This creates an ArrayList of all Options (Strings) -->
+                <String fx:value="This is Option 1"/>
+                <String fx:value="Option 2 is this One"/>
+                <String fx:value="Option 3 is also written in a weird way XD"/>
+                <String fx:value="Yes I could not have written Option 4 simpler"/>
+                <String fx:value="Option 5, yeah I let you enjoy here ;p"/>
+            </FXCollections>
+        </items>
+
+        <!-- Now we specify a default value to show at start of the application! :D  -->
+
+        <value>
+            <String fx:value="This is the Default Option"/>
+        </value>
+
+    </ComboBox>
+
+</GridPane>

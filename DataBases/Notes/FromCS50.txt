@@ -1,0 +1,253 @@
+
+** Use this as a handbook for SQL reference words ;D
+https://www.w3schools.com/sql/sql_ref_keywords.asp
+
+1. We can pass around functions in Python as arguments.
+
+Eg:-
+
+# Suppose locations is a list of int values.
+# places is a list of places (each place a dictionary with 'name' = name and 'dist' = distance).
+
+
+    def f(place):
+        return place['dist'];
+
+    sortedList = sorted(places, key = f, reverse=True)    # It'll sort the list of places by descending order of their 'dist' (Distance) values.
+
+2. We can use LAMBDA Functions in PYTHONN!!!!! YAYY!
+
+Syntax:
+
+    lambda INPUT_PARAMETER: RETURN_VALUE
+
+***
+Instead of writing:
+
+/*
+
+    def f(place):
+        return place['dist'];
+
+    sortedList = sorted(places, key = f, reverse=True)    # It'll sort the list of places by descending order of their 'dist' (Distance) values.
+
+*/
+
+Simply write:
+
+/*
+
+    sortedList = sorted(places, key = lambda place: place['dist'], reverse=True)    # It'll sort the list of places by descending order of their 'dist' (Distance) values.
+
+*/
+
+3. SQL OP!
+
+    Run
+        sqlite3 DATABASE_FILEPATH
+
+    to open a database file in SQL
+
+    Run
+        sqlite> .schema
+
+    To view the data distribution scheme for the current Database :D
+--
+    Either create a table using:
+
+        $ sqlite3
+        sqlite> CREATE TABLE table_name (column_name column_type, ...);                        // DON'T FORGET THE SEMI-COLON!
+
+    and then insert data...
+
+        sqlite> INSERT INTO table_name (column_name_1, ...) VALUES (value_name_1, ...);
+
+    Or Simply import :D
+
+        $ sqlite3
+        sqlite> .import 'File_path' database_name
+
+--  Then Update values using:
+
+        sqlite> UPDATE shows SET genres = "Comedy, Drama, Musical" WHERE title = "The Muppet Show";
+
+    Or Delete Using:
+
+        sqlite> DELETE FROM shows WHERE title LIKE "FRIENDS";
+
+----------
+
+    Access the data using SQL commands and SQL (language).
+
+    To select a column and print it's values.   (DON'T forget the semicolons XD)
+
+        sqlite> SELECT column_name FROM database_name;
+
+    Or use the power of SQL through it's inbuilt features like:- AVG, COUNT, DISTINCT, LOWER, MAX, MIN, UPPER, etc.
+
+        sqlite> SELECT DISTICT( column_name ) FROM database_name;
+
+    Or to fetch DISTINCT entries from a column and in UpperCase.
+
+    sqlite> SELECT DISTICT( UPPER(column_name) ) FROM database_name;
+
+---------
+
+    We can also use these:
+
+    1. WHERE, matching results on a strict condition
+    2. LIKE, matching results on a less strict condition
+    3. ORDER BY, ordering results in some way
+    4. LIMIT, limiting the number of results
+    5. GROUP BY, grouping results in some way
+
+    Examples:
+
+    1. This gets entries from the column 'title' which match with "The Office".
+
+        sqlite> SELECT title FROM shows WHERE title = "The Office";
+
+    2. On Contrast, this will select entries that have the keyword "Office" with any number of characters at the front and the back. (Use of %)
+
+        sqlite> SELECT title FROM shows WHERE title LIKE "%Office%";
+
+    3.a. This to SORT out the entries (in descending order) by their uppercase version of their respective title entries.
+
+        sqlite> SELECT DISTINCT(UPPER(title)) FROM shows ORDER BY UPPER(title) DESC;
+
+    3.b. This to SORT out the entries (in descending order) by their Title Entries CASE IGNORED.
+
+        sqlite> SELECT DISTINCT(UPPER(title)) FROM shows ORDER BY title COLLATE NOCASE DESC;
+
+    4. This to Count the number of entries per 'title' and group them with Uppercase version of their titles.
+
+        sqlite> SELECT UPPER(TRIM(title)), COUNT(title) FROM shows GROUP BY UPPER(title);
+
+    * No need to do UPPER(TRIM(title)) inside COUNT as we already modified the title's value while doing SELECT :D
+
+    5. This does the same but orders the values in Descending order by their counts!
+
+        sqlite> SELECT TRIM(UPPER(title)), COUNT(title) FROM shows GROUP BY UPPER(title) ORDER BY COUNT(title) DESC;
+
+4. DATA TYPES in SQL:
+
+    0. BLOB  (binary large object; chunk of '1's and '0's :D)
+
+    1. INTEGER
+            a. SMALLINT, with fewer bits
+            b. INTEGER
+            c. BIGINT, with more bits
+
+    2. NUMERIC  (Number Like)
+            a. BOOLEAN
+            b. DATE
+            c. DATETIME
+            d. NUMERIC(scale,precision), with a fixed number of digits
+            e. TIME
+            f. TIMESTAMP
+
+    3. REAL             (Floating point Number :D)
+            a. REAL
+            b. DOUBLE PRECISION, with twice as many bits
+
+    4. TEXT             (Equivalent to Strings)
+            a. CHAR(n), a fixed number of characters
+            b. VARCHAR(n), a variable number of characters, up to some limit n
+            c. TEXT, a string with no limit
+
+--  Properties that a column in SQL can have :D
+
+        1. NOT NULL, which specifies that there must be some value
+        2. UNIQUE, which means that the value for that column must be unique for every row in the table
+        3. PRIMARY KEY, a column (present in the table itselft) of unique identifier values for all entries in the table.
+        4. FOREIGN KEY, a column (referencing to values from another column in another table) of values used to segregate the entries in this table.
+
+5.  We Can NEST Queries in SQL :D
+
+    Eg:
+
+    To get show names from a database show which were in the place "Kolkata", when a common value show_id connects the two databases (shows and places).
+
+        sqlite> SELECT show_name FROM shows WHERE show_id IN (SELECT show_id FROM places WHERE place LIKE "Kolkata")
+
+
+6. Using SQL with Python through CS50's library:
+
+        from cs50 import SQL
+
+        # Cryptic Syntax ahead! XD
+        database = SQL("sqlite:///Database_File_Path")
+
+        database.execute("SQL_command to execute")
+
+    We can also Use place holders ('?') to put in names or variables in our queries like:
+
+        database.execute("SELECT (?) FROM (?)", column_names[i], database_names[i]);
+
+7. The powerful technique usable in SQl is to load an index of the data into memory as a B-Tree (A Tree structure with maxwidth and least depth)
+   This allows for search times to be magnitudes faster! <3
+   
+   We can index a colum 'title' from a table shows like:
+   
+       sqlite> CREATE INDEX title_index ON shows (title);
+
+*   We can time our queries by running the 
+        .timer ON
+*   to turn on a timer to time our queries :D
+    
+8. We can join certain columns in certain Tables so as to link the tables together using the JOIN keyword. :D
+
+   Eg: 
+   
+       sqlite3> SELECT title FROM people
+        ...> JOIN stars ON people.id = stars.person_id
+        ...> JOIN shows ON stars.show_id = shows.id
+        ...> WHERE name = "Steve Carell";
+        ...
+        The Morning Show
+        LA Times: the Envelope
+    
+    Here 'people', 'shows' and 'stars' are tables
+    where the 'id' in table 'people' is equal to Foreign Key 'persons_id' in table 'stars'
+    and the 'id' in 'shows' is equal to the foreign Key 'show_id' in the table 'stars'
+    
+9. PROBLEMS with SQL :P
+--
+    1. SQL Injection Attacks <3
+    
+        '--' is used to comment out stuff in SQL *_*
+    
+        If a user types in 
+        
+            malan@harvard.edu'--
+        
+        then the query in our python program will end up being:
+        
+            db.execut(f"SELECT * FROM users WHERE username = 'malan@harvard.edu'--' AND password = '{password}'")
+ 
+        This query will actually select the row where username = 'malan@harvard.edu', without checking the password, since the -- turns the rest of the line into a comment in SQL.
+--- 
+    2. Race Problems:- Multiple peers executing same query and messing up XD
+    
+        If two servers run the exact same query to update certain value at the same damn time, like: -
+        
+            rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+            likes = rows[0]["likes"]
+            db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes + 1, id);
+                    
+        Then there will be only one increment and stuff will be messed up completely XD
+        
+    Solution: Go in Line!! Turn by Turn XD
+    
+    Use SQL commands like START TRANSACTION and COMMIT, like:
+    
+        db.execute("BEGIN TRANSACTION")
+        rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+        likes = rows[0]["likes"]
+        db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes + 1, id);
+        db.execute("COMMIT")
+        
+    This is good code :D
+    
+    
+    

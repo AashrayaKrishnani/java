@@ -1,0 +1,21 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:controller="com.aashrayakrishnani.javafx.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="bottom_right"
+      style="-fx-border-color: red; -fx-border-width: 3; -fx-border-style: dashed"
+      spacing = "10">
+
+    <!--    This Adds a 10 pixel padding from the right and bottom of the window! :D -->
+    <padding >
+        <Insets bottom="10" right="10"/>
+    </padding>
+
+
+   <Button text="Okay" prefWidth="90"/> <!--  preWidth is used to add preferred width -->
+    <Button text="Cancel" prefWidth="90"/> <!-- Here used to make all buttons of same width :) -->
+    <Button text="Help" prefWidth="90"/>
+
+
+</HBox>

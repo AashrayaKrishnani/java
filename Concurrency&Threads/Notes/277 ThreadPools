@@ -1,0 +1,11 @@
+---
+Thread Pool
+---
+A place consisting of 'Managed' threads that are INDIRECTLY controlled by the programmer to reduces fuss. 
+
+--
+Callable Classes  ~~ Runnable but can return values :D
+--
+We can use these classes to make sure that te executing service returns the value after the thread execution.
+
+--

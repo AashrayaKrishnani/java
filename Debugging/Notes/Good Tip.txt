@@ -1,0 +1,3 @@
+It's a *Good Practice* to view the *options* provided for *BreakPoints* in an *IDE*,
+
+Example: The *log-point* feature in VS Code allows us to *Log/Print* certain value when a *BreakPoint* is reached :D

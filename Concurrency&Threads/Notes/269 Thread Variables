@@ -1,0 +1,10 @@
+1.
+ Threads have their own share of STACK memory that they can have variables in!
+ So a variable defined in a thread uses the stack memory of that stack.
+ Meaning it can be accessed by that thread specifically, and that respective memory is
+ freed as the thread is released.
+
+2.
+Instance variables of an Object take up memory in the HEAP.
+Meaning multiple Threads can access and alter a particular variable in the Heap Memory!
+Plus the variable isn't discarded upon those specific threads' dismissal! :D

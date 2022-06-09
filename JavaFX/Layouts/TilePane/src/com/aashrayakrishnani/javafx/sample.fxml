@@ -1,0 +1,24 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.TilePane?>
+
+<!-- Here the layout 'TilePane' actually assigns each control (button) a tile or a grid based on the max size
+     needed by a control, as by the longest button 'Seven' here :) -->
+<!-- It's functioning is then similar to that of a FlowPane, i.e.,  if we resize the window, then
+     unlike the VBox or HBox it'll resize itself accordingly to fit the buttons as much as it can. :)-->
+
+
+<TilePane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml">
+
+    <Button text="Button One"/>
+    <Button text="Button Two"/>
+    <Button text="Button Three"/>
+    <Button text="Button Four"/>
+    <Button text="Button Five"/>
+    <Button text="Button Six"/>
+    <Button text="Button Seven"/>
+    <Button text="Button Eight"/>
+    <Button text="Button Nine"/>
+    <Button text="Button Ten"/>
+
+</TilePane>

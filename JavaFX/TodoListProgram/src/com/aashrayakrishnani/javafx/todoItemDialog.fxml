@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:controller="com.aashrayakrishnani.javafx.addContactDialogController"
+            xmlns:fx="http://javafx.com/fxml/1" >
+
+    <headerText>
+        Inside headerText of DialogPane :D
+    </headerText>
+
+    <content>
+
+        <GridPane vgap="10" hgap="10" >
+
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   text="Short Description -"  style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" >
+                    <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                          Try making the Label text longer to see it in effect ;D -->
+
+                    <font>
+                        <Font name="Impact" size="14"/>
+                    </font>
+
+
+                </Label>
+
+            <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       fx:id="shortDescriptionTextField" />
+
+
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   text="Long Description -" style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" >
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14"/>
+                </font>
+
+
+            </Label>
+
+            <TextArea GridPane.rowIndex="1" GridPane.columnIndex="1"
+                       fx:id="longDescriptionTextArea" wrapText="true" />
+
+            <Label GridPane.rowIndex="2" GridPane.columnIndex="0"
+                   text="DeadLine -" style="-fx-text-fill: #333333;-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );" >
+                <!-- 'wrapText' here allows dynamic wrapping of the Label text as the window is resized :D
+                      Try making the Label text longer to see it in effect ;D -->
+
+                <font>
+                    <Font name="Impact" size="14"/>
+                </font>
+
+            </Label>
+
+            <DatePicker GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="deadlinePicker"/>
+
+        </GridPane>
+
+
+
+    </content>
+
+</DialogPane>

@@ -1,0 +1,40 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10"
+          gridLinesVisible="true">
+
+<!--    This Adds a 20 pixel padding from the top of the title! :D -->
+    <padding >
+        <Insets top="20"/>
+    </padding>
+
+<!--    using 'gridLinesVisible="true"' inside above 'GridPane' tag allows to see gridlines to have a better feel ;p-->
+
+
+<!--    Column Constraint Code to have each column occupy a certain percent of total gridpane width-->
+<!--    <columnConstraints>-->
+        <!--        This is column Constraint for Column 1 -->
+<!--        <ColumnConstraints percentWidth="50.0"/>-->
+        <!--        This is column Constraint for Column 2 -->
+<!--        <ColumnConstraints percentWidth="50.0"/>-->
+<!--    </columnConstraints>-->
+
+<!--    Their order in the code doesn't matter as long as awe specify the 'row' and 'column' indices :) -->
+    <Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0"
+    GridPane.halignment="RIGHT"/>
+<!--  'GridPane.halignment="RIGHT"' aligns button to the Right of that SPECIFIC CELL in the respective GRID! :D  -->
+
+    <Button text="Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+<!--  This fits the long button without enlarging specific column spaces by actually fitting it into 2 columns :) -->
+    <Button text="Really Long Button Four" GridPane.rowIndex="3" GridPane.columnIndex="0"
+    GridPane.columnSpan="2"/>
+
+
+    <Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+
+
+</GridPane>

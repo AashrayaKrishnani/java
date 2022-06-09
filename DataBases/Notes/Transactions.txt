@@ -1,0 +1,27 @@
+---
+---
+Transactions
+---
+
+    When using transactions, the whole code in a transaction is treadted as a single unit, 
+    hence it either executes fully, or even if one statment fails, the whole unit fails.
+
+    Helps prevent Race conditions, and also potential data loss in case connection drops while making a series of changes.
+
+---
+Useful Commands
+---
+
+1. BEGIN TRANSACTION
+
+    To manually Start a TRANSACTION
+
+2. END TRANSACTION
+        or 
+      COMMIT
+
+    Automatically COMMITS and ends the TRANSACTION
+  
+3. ROLLBACK
+
+    Rolls back any UNCOMMITTED CHANGES, and Ends the TRANSACTION.

@@ -1,0 +1,36 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:controller="com.aashrayakrishnani.javafx.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!-- Now this a RadioButton, here the functionality is like so that there are multiple options but only
+         one can be selected at a time.
+         Similar to how Old Radios had buttons for different stations, but the radio could only be tuned to a single
+         station at one time. :) -->
+
+    <!-- The ToggleGroup allows to connect different RadioButtons so that only one is active at a time :) -->
+    <!-- The fx:define tag is used to do so because ToggleGroup can not be directly referenced in a Scene :) -->
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+
+    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0"
+          style="-fx-border-color: black; -fx-border-width: 2; -fx-border-style: dashed"
+          spacing = "10">
+
+        <padding>    <!--  This Adds a 10 pixel padding all around the VBox Section! :D -->
+            <Insets bottom="10" right="10" left="10" top="10"/>
+        </padding>
+
+        <!-- The 'selected' property allows to have a default button selected at the start of the application :) -->
+        <RadioButton text="Red" textFill="red" toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton text="Blue" textFill="deepskyblue" toggleGroup="$colorToggleGroup"/>
+        <RadioButton text="Green" textFill="lawngreen" toggleGroup="$colorToggleGroup"/>
+
+    </VBox>
+
+</GridPane>
